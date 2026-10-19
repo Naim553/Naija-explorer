@@ -1,0 +1,434 @@
+
+
+:root {
+  --green: #008751;
+  --yellow: #ffd54f;
+  --text: #222222;
+  --background: #f7f7f7;
+  --card: #ffffff;
+  --border: #dddddd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.5;
+}
+
+
+.navbar {
+  background: var(--green);
+  color: white;
+  padding: 14px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo strong {
+  color: var(--yellow);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.menu-button {
+  display: none;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 1.2rem;
+}
+
+.theme-button {
+  padding: 8px 12px;
+  background: white;
+  color: var(--green);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 70px 6%;
+  background: #dcefe3;
+  border-bottom: 5px solid var(--yellow);
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.small-title {
+  color: var(--green);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+}
+
+.hero p {
+  max-width: 560px;
+}
+
+.main-button {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 11px 18px;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-button:hover {
+  background: #006b40;
+}
+
+.page-section {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 40px 6%;
+  scroll-margin-top: 80px;
+}
+
+.page-section h2 {
+  margin: 0 0 5px;
+}
+
+.section-intro {
+  margin-top: 0;
+  color: #666666;
+}
+
+.search-controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.search-controls label,
+.form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 11px;
+  font: inherit;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+}
+
+.result-count {
+  margin: 16px 0;
+  color: #555555;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.place-card {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+
+.place-banner {
+  min-height: 85px;
+  background: #e1f0e6;
+  color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.place-info {
+  padding: 15px;
+}
+
+.place-info h3 {
+  margin: 0 0 5px;
+}
+
+.place-location,
+.place-type {
+  margin: 5px 0;
+  color: #555555;
+  font-size: 0.92rem;
+}
+
+.region-label {
+  display: inline-block;
+  margin: 7px 0;
+  padding: 3px 9px;
+  border-radius: 12px;
+  background: #e1f0e6;
+  color: #005c36;
+  font-size: 0.82rem;
+}
+
+.card-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.details-button,
+.save-button {
+  padding: 8px 11px;
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.details-button {
+  background: var(--green);
+  color: white;
+}
+
+.save-button {
+  background: var(--card);
+  color: var(--green);
+}
+
+.alternate-section {
+  max-width: none;
+  padding-left: max(6%, calc((100% - 1010px) / 2));
+  padding-right: max(6%, calc((100% - 1010px) / 2));
+  background: #eaf4ee;
+}
+
+.empty-message {
+  color: #666666;
+}
+
+#tripForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 17px;
+  max-width: 750px;
+  margin-top: 22px;
+}
+
+.error-message {
+  display: block;
+  min-height: 18px;
+  margin-top: 3px;
+  color: #b00020;
+  font-weight: normal;
+}
+
+.submit-button {
+  justify-self: start;
+}
+
+.success-message {
+  max-width: 750px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #e1f0e6;
+  color: #005c36;
+}
+
+.success-message:empty {
+  display: none;
+}
+
+.footer {
+  padding: 22px 6%;
+  text-align: center;
+  background: #064c36;
+  color: white;
+}
+
+.footer p {
+  margin: 5px;
+}
+
+.details-dialog {
+  width: calc(100% - 30px);
+  max-width: 520px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--card);
+}
+
+.details-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.dialog-content {
+  padding: 24px;
+}
+
+.close-button {
+  float: right;
+  border: none;
+  background: transparent;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+
+body.dark-mode {
+  --text: #eeeeee;
+  --background: #202620;
+  --card: #2d342e;
+  --border: #4c554d;
+}
+
+body.dark-mode .hero,
+body.dark-mode .alternate-section {
+  background: #293c30;
+}
+
+body.dark-mode .place-banner,
+body.dark-mode .region-label,
+body.dark-mode .success-message {
+  background: #385641;
+  color: #f0fff4;
+}
+
+body.dark-mode .section-intro,
+body.dark-mode .result-count,
+body.dark-mode .place-location,
+body.dark-mode .place-type,
+body.dark-mode .empty-message {
+  color: #cccccc;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  color: var(--text);
+}
+
+@media (min-width: 600px) {
+  .search-controls {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .places-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #tripForm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .submit-button {
+    grid-column: 1 / -1;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .places-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 5%;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    order: 3;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0 5px;
+  }
+
+  .nav-links.show-menu {
+    display: flex;
+  }
+
+  .theme-button {
+    margin-left: auto;
+  }
+
+  .hero {
+    padding: 48px 5%;
+  }
+
+  .page-section {
+    padding: 32px 5%;
+  }
+
+  #tripForm {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-button {
+    grid-column: auto;
+  }
+}

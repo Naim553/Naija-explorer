@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naija Explorer Tours</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#home"><span>Naija</span> <strong>Explorer</strong></a>
+
+
+    <nav id="navLinks" class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#explore">Explore</a>
+      <a href="#favourites">Favourites (<span id="favouriteCount">0</span>)</a>
+      <a href="#plan">Plan a Trip</a>
+    </nav>
+
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="small-title">EXPLORE NIGERIA</p>
+        <h1>Discover Nigeria's Amazing Places</h1>
+        <p>Find interesting places, enjoy new experiences and plan your next trip with Naija Explorer.</p>
+        <a class="main-button" href="#explore">Explore Places</a>
+      </div>
+    </section>
+
+    <section id="explore" class="page-section">
+      <h2>Explore Places</h2>
+      <p class="section-intro">Choose a destination for your next adventure.</p>
+
+      <div class="search-controls">
+        <label>
+          Search by name or state
+          <input id="searchInput" type="search" placeholder="For example, Lagos">
+        </label>
+
+        <label>
+          Filter by region
+          <select id="regionSelect">
+            <option>All regions</option>
+            <option>North Central</option>
+            <option>North East</option>
+            <option>North West</option>
+            <option>South East</option>
+            <option>South South</option>
+            <option>South West</option>
+          </select>
+        </label>
+      </div>
+
+      <p id="resultCount" class="result-count">Showing 10 of 10 places</p>
+      <div id="placesGrid" class="places-grid"></div>
+    </section>
+
+    <section id="favourites" class="page-section alternate-section">
+      <h2>My Favourites</h2>
+      <p class="section-intro">Places you save will appear here.</p>
+      <div id="favouritesGrid" class="places-grid"></div>
+      <p id="emptyFavourites" class="empty-message">You have not saved any places yet.</p>
+    </section>
+
+    <section id="plan" class="page-section">
+      <h2>Plan a Trip</h2>
+      <p class="section-intro">Fill in the form to make a trip request.</p>
+
+      <form id="tripForm" novalidate>
+        <div class="form-field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" placeholder="Your full name">
+          <small id="nameError" class="error-message"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com">
+          <small id="emailError" class="error-message"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="tripPlace">Place to visit</label>
+          <select id="tripPlace" name="tripPlace">
+            <option value="">Choose a place</option>
+          </select>
+          <small id="placeError" class="error-message"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="travelDate">Travel date</label>
+          <input id="travelDate" name="travelDate" type="date">
+          <small id="dateError" class="error-message"></small>
+        </div>
+
+        <div class="form-field">
+          <label for="people">Number of people</label>
+          <input id="people" name="people" type="number" min="1" max="20" placeholder="1 to 20">
+          <small id="peopleError" class="error-message"></small>
+        </div>
+
+        <button class="main-button submit-button" type="submit">Send Trip Request</button>
+      </form>
+
+      <p id="successMessage" class="success-message" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Naija Explorer Tours Ltd</p>
+    <p>© <span id="currentYear"></span> Naija Explorer Tours Ltd. Built by Naim Murtala.</p>
+  </footer>
+
+  <dialog id="detailsDialog" class="details-dialog">
+    <div class="dialog-content">
+      <button id="closeDialog" class="close-button" aria-label="Close details">×</button>
+      <h2 id="detailsTitle"></h2>
+      <p id="detailsLocation" class="place-location"></p>
+      <p id="detailsType" class="place-type"></p>
+      <p id="detailsDescription"></p>
+      <p><strong>Travel tip:</strong> <span id="detailsTip"></span></p>
+    </div>
+  </dialog>
+</body>
+</html>
